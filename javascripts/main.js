@@ -78,7 +78,11 @@ var startPoint = 0;
       .attr("x", function(d) { return x(d.startDate); })
       .attr("y", function(d) {  return  y(d.wins + d.baseHeight); })
       .attr("width", function(d) {return x( d.endDate) - x(d.startDate); })
-      .attr("height", function(d) { return height - y(d.wins) ; });
+      .attr("height", function(d) { return height - y(d.wins) ; })
+      .append("title")
+      .text(function (d){
+        return d.name + " | Nationality: " + d.name + " | Wins: " + d.wins;
+      });
 	
 	  
 //add the axis
